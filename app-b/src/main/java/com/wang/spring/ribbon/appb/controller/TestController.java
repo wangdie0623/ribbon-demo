@@ -13,6 +13,7 @@ public class TestController {
 
     @GetMapping("test")
     public String test() {
+        //app-a 为注册在eureka-server中的a服务名称,info为提供的服务地址
         return template.getForObject("http://app-a/info", String.class);
     }
 }
