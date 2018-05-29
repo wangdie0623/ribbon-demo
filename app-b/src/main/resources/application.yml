@@ -1,0 +1,21 @@
+spring:
+  application:
+    #应用名称
+    name: app-b
+eureka:
+  instance:
+    #服务签订间隔
+    lease-renewal-interval-in-seconds: 5
+    #签订成功到期时间
+    lease-expiration-duration-in-seconds: 10
+    #自定义应用标识
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    #开启ip地址显示
+    prefer-ip-address: true
+  client:
+    service-url:
+       #eureka服务地址
+       defaultZone: http://localhost:8761/eureka/
+server:
+  #应用端口
+  port: 9091
